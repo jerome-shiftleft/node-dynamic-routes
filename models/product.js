@@ -19,6 +19,8 @@ const getProductsFromFile = cb => {
 
 module.exports = class Product {
   constructor(title, imageUrl, description, price) {
+    this.id = Date.now();
+    console.log(`id: ${this.id}`)
     this.title = title;
     this.imageUrl = imageUrl;
     this.description = description;
@@ -26,6 +28,7 @@ module.exports = class Product {
   }
 
   save() {
+    //this.id = Math.random().toString();
     getProductsFromFile(products => {
       products.push(this);
       fs.writeFile(p, JSON.stringify(products), err => {
