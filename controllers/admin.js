@@ -38,6 +38,10 @@ exports.postAddProduct = (req, res, next) => {
   res.redirect("/");
 };
 
+exports.postEditProduct = (req, res, next) => {
+  
+}
+
 exports.getProducts = (req, res, next) => {
   Product.fetchAll((products) => {
     res.render("admin/products", {
