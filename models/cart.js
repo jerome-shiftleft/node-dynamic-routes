@@ -53,7 +53,7 @@ module.exports = class Cart {
     });
   } // end of static deleteProduct(id, productPrice)
 
-  static getProducts() {
+  static getCart(cb) {
     fs.readFile(p, (err, fileContent) => {
       const cart = JSON.parse(fileContent);
       if (err) {
